@@ -1,0 +1,22 @@
+base: &base
+  adapter: mysql2
+  username: root
+  password:
+  host: 127.0.0.1
+  encoding: utf8
+
+development:
+  database: cucumber_test_development
+  <<: *base
+
+test:
+  database: cucumber_test_test
+  <<: *base
+
+cucumber:
+  database: cucumber_test_test
+  <<: *base
+
+production:
+  database: cucumber_test_production
+  <<: *base
