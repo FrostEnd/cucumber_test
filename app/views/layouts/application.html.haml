@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+  %title CucumberTest
+  = csrf_meta_tags
+  = stylesheet_link_tag "application", :media => "all"
+  = javascript_include_tag "application"
+
+  %body
+    - if current_user.present?
+      %div 
+        Olá,
+        %strong= current_user.username
+        = link_to 'My Account', edit_user_registration_path
+        = link_to "Logout", "/users/sign_out", method: :delete
+    - else
+      %div
+        = link_to 'Login', user_session_path
+    = yield
