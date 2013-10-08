@@ -20,4 +20,5 @@ group :test do
   gem "cucumber"
   gem 'cucumber-rails'
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
